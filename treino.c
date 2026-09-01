@@ -11,6 +11,9 @@ void sistema()
     };
     struct treino Produtos[100];
     int totalProdutos = 0;
+    float altura;
+    float largura;
+    int tipo;
 
     int opcao;
 
@@ -102,14 +105,28 @@ void sistema()
                 if (!encontrado)
                 {
                     printf("Produto não encontrado!!");
-                    
                 }
             }
 
             break;
 
         case 4:
-            printf("Entrada de estoque\n");
+            printf("=======================================================\n");
+            printf("       Entrada de estoque\n");
+            printf("=======================================================\n");
+
+            printf("Qual produto deseja dar entrada ?\n");
+            scanf("%49s", Produtos[totalProdutos].nome);
+
+            printf("1 - Grande!\n");
+            printf("2 - Medio!\n");
+            printf("3 - Pequeno!\n");
+            printf("Escolha:");
+            scanf("%d", &Produtos[totalProdutos].tipo);
+            printf("Quantidade");
+            scanf("%d", &Produtos[totalProdutos].quantidade);
+            totalProdutos++;
+
             break;
 
         case 5:
