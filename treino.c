@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void sistema()
 {
@@ -34,7 +35,7 @@ void sistema()
 
         case 1:
             printf("Nome do Produto: ");
-            scanf(" %49[^\n]", Produtos[totalProdutos].nome);
+            scanf(" %49s[^\n]", Produtos[totalProdutos].nome);
 
             printf("Quantidade: ");
             scanf("%d", &Produtos[totalProdutos].quantidade);
@@ -73,12 +74,37 @@ void sistema()
 
         case 3:
             printf("=======================================================\n");
-            printf("Buscar produto\n");
+            printf("           Buscar produto\n");
             printf("=======================================================\n");
-            
 
+            if (totalProdutos == 0)
+            {
+                printf("Produto não Localizado!\n");
+            }
+            else
+            {
+                char nomebusca[50];
+                int encontrado = 0;
 
+                printf("Escreva o nome do produto:\n");
+                scanf("%49s", nomebusca);
 
+                for (int i = 0; i < totalProdutos; i++)
+                {
+                    if (strcmp(Produtos[i].nome, nomebusca) == 0)
+                    {
+                        printf("\nProduto encontrado!\n");
+                        printf("Nome: %s\n", Produtos[i].nome);
+                        encontrado = 1;
+                    }
+                    break;
+                }
+                if (!encontrado)
+                {
+                    printf("Produto não encontrado!!");
+                    
+                }
+            }
 
             break;
 
