@@ -1,0 +1,8 @@
+CARRO;55;08:00;-;0.00
+MOTO;66;08:00;-;0.00
+Veiculo: Carro | Placa : 55 | Horario de saida: 11:00| Valor: 18.00
+Veiculo: Moto | Placa : 66 | Horario de saida: 11:00| Valor: 14.00
+CARRO;55;08:00;-;0.00
+MOTO;66;08:00;-;0.00
+CARRO;55;08:00;-;0.00
+Veiculo: Carro | Placa : 55 | Horario de saida: 10:00| Valor: 13.00

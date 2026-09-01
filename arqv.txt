@@ -1,0 +1,157 @@
+#include <stdio.h>
+
+
+int arquivos (){
+
+FILE *arquivo;
+
+char nome [50];
+int idade;
+float altura;
+
+int quantidade;
+int i;
+
+int totalAlunos = 0;
+int opcaoLimpar;
+
+
+printf ("\n==========================================\n");
+printf ("        CADASTRO DE ALUNOS\n");
+printf ("\n==========================================\n");
+
+printf("Quantos alunos deseja cadastrar?");
+scanf ("%d" , &quantidade);
+
+
+arquivo = fopen ("arquivos/cadastro.txt", "a");
+
+// "a" - adicionar
+// "w" - sobrescrever
+// "r" - ler
+
+if ( arquivo == NULL) {
+
+    printf ("\nErro ao abrir o arquivo!\n");
+    // Verificar se o arquivo foi aberto
+    return 1;
+}
+
+//fopen abrir arquivo
+//fprintf informar o arquivo mexido
+// fclose fechar arquivo
+//fscanf - le oq esta escrito no arquivo 
+
+while (
+    fscanf (
+        arquivo,
+        "nome: %49s | idade %d | altura %f",
+        nome,
+        &idade,
+        &altura
+
+    ) ==3
+) {
+
+    totalAlunos++;
+    printf ("\nAluno %d\n", totalAlunos);
+
+    printf("Nome: %s\n", nome);
+    printf ("idade %d\n", idade);
+    printf ("altura ¨%f\n", altura);
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//printf ("\n==========================================\n");
+//printf ("        CADASTRO DE VEICULOS\n");
+//printf ("\n==========================================\n");
+
+
+//printf("Quantos veiculos deseja cadastrar?");
+//scanf ("%d" , quantidade);
+
+//arquivo = fopen ("arquivos/veiculos.txt", "a");
+if ( arquivo == NULL) {
+
+    printf ("\nErro ao abrir o arquivo!\n");
+    // Verificar se o arquivo foi aberto
+    return 1;
+}
+
+for (i = 0; i < quantidade; i++){
+ printf ("\n==========================================\n");
+ printf ("VEICULOS %d\n" , i + 1);
+ printf ("\n==========================================\n");
+
+ printf("Placa:");
+ scanf("%s" , placa);
+
+ printf("Veiculo:");
+
+ scanf ("%s" , veiculo);
+
+ printf("Horario:");
+ scanf ("%d" , horas);
+
+ fprintf (arquivo, "Placa: %s | Horario: %d |Veiculo: %s\n" , placa , horas, &veiculo);
+
+ printf("\nVeiculo salvo com sucesso!\n");
+
+ }
+while (
+    fscanf (
+        arquivo,
+        "placa: %s |  horario: %d |veiculo: %s", placa, horas, &veiculo) ==3
+) {
+
+    totalVeiculo++;
+    printf ("\nVeiculo %s\n", totalVeiculo);
+
+    printf("Placa: %s\n", placa);
+    printf ("Veiculo %s\n", &veiculo);
+    
+} 
+
+
+
+fclose (arquivo);
+
+
+}
