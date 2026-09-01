@@ -14,6 +14,7 @@ void sistema()
     float altura;
     float largura;
     int tipo;
+    int sair;
 
     int opcao;
 
@@ -123,18 +124,93 @@ void sistema()
             printf("3 - Pequeno!\n");
             printf("Escolha:");
             scanf("%d", &Produtos[totalProdutos].tipo);
-            printf("Quantidade");
+            printf("Quantidade:\n");
             scanf("%d", &Produtos[totalProdutos].quantidade);
             totalProdutos++;
 
             break;
 
         case 5:
-            printf("Saida de estoque\n");
-            break;
+    printf("=======================================================\n");
+    printf("                Saida de estoque\n");
+    printf("=======================================================\n");
+
+    if (totalProdutos == 0)
+    {
+        printf("Nenhum produto cadastrado!\n");
+    }
+    else
+    {
+        char nomeBusca[50];
+        int quantidadeSaida;
+        int encontrado = 0;
+
+        printf("Digite o nome do produto: ");
+        scanf("%49s", nomeBusca);
+
+        for (int i = 0; i < totalProdutos; i++)
+        {
+            if (strcmp(Produtos[i].nome, nomeBusca) == 0)
+            {
+                encontrado = 1;
+
+                printf("\nProduto encontrado!\n");
+                printf("Nome: %s\n", Produtos[i].nome);
+                printf("Quantidade atual: %d\n", Produtos[i].quantidade);
+
+                printf("Quantidade para retirar: ");
+                scanf("%d", &quantidadeSaida);
+
+                if (quantidadeSaida <= 0)
+                {
+                    printf("Quantidade invalida!\n");
+                }
+                else if (quantidadeSaida > Produtos[i].quantidade)
+                {
+                    printf("Estoque insuficiente!\n");
+                }
+                else
+                {
+                    Produtos[i].quantidade -= quantidadeSaida;
+
+                    printf("\nSaida realizada com sucesso!\n");
+                    printf("Produto: %s\n", Produtos[i].nome);
+                    printf("Quantidade retirada: %d\n", quantidadeSaida);
+                    printf("Estoque restante: %d\n", Produtos[i].quantidade);
+                }
+
+                break;
+            }
+        }
+
+        if (encontrado == 0)
+        {
+            printf("Produto nao encontrado!\n");
+        }
+    }
+
+    break;
+
 
         case 6:
+        printf("=======================================================\n");
             printf("Saindo do sistema...\n");
+            printf("=======================================================\n");
+            printf("Realmente deseja sair do sitema?\n");
+            printf("1 - SIM!\n");
+            printf("2 - NÃO\n");
+            printf("Escolha:");
+            scanf("%d" , &sair);
+             if( sair == 1)
+             {
+                printf("\nObrigado por usar nosso sistema!");
+             }
+             else{
+
+                sair == 0;
+             }
+
+
             break;
 
         default:
