@@ -44,11 +44,25 @@ header {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
 .logo h2 {
     color: var(--dourado);
     font-size: 27px;
     font-weight: 800;
     letter-spacing: 1px;
+    margin: 0;
 }
 
 nav {
@@ -134,7 +148,7 @@ nav a:hover {
 
 
 /* =================================
-   BOTÕES
+   BOTÕES PRINCIPAIS
 ================================= */
 
 .botoes {
@@ -257,52 +271,400 @@ nav a:hover {
 }
 
 
-/* =================================
-   CARDÁPIO
-================================= */
+/* ========================================
+   CARDÁPIO - DOCE IMPÉRIO
+======================================== */
 
 .projetos-secao {
-    padding: 100px 10%;
-    background: #f0e5d5;
+    background: #F1E5D4;
+    padding: 90px 5%;
 }
 
-.projetos {
+/* SUBTÍTULO */
+
+.subtitulo-cardapio {
+    display: block;
+    color: #806D60;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+/* CATEGORIAS */
+
+.categoria-cardapio {
+    width: 100%;
+    max-width: 1250px;
+    margin: 55px auto 22px;
+    border-left: 5px solid #C89548;
+    padding-left: 18px;
+}
+
+.categoria-cardapio h3 {
+    color: #49291F;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.categoria-cardapio p {
+    color: #806D60;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* GRADE DE PRODUTOS */
+
+.cardapio-produtos {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 25px;
 }
 
-.card {
-    background: var(--branco);
-    padding: 35px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(75, 41, 31, 0.07);
-    transition: 0.3s;
-    border-bottom: 4px solid transparent;
+/* CARTÕES */
+
+.produto-card {
+    background: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(73, 41, 31, 0.08);
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
-.card:hover {
-    transform: translateY(-8px);
-    border-bottom-color: var(--dourado);
-    box-shadow: 0 12px 30px rgba(75, 41, 31, 0.12);
+.produto-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px rgba(73, 41, 31, 0.15);
 }
 
-.numero-projeto {
-    color: var(--dourado);
-    font-size: 30px;
-    font-weight: 900;
-    margin-bottom: 15px;
+/* IMAGENS */
+
+.produto-card img {
+    width: 100%;
+    height: 205px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
 }
 
-.card h3 {
+.produto-card:hover img {
+    transform: scale(1.04);
+}
+
+/* INFORMAÇÕES */
+
+.produto-info {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.produto-info h3 {
+    color: #49291F;
+    font-size: 19px;
+    margin: 0 0 10px;
+}
+
+.produto-info p {
+    color: #806D60;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0 0 15px;
+    min-height: 48px;
+}
+
+/* PREÇO */
+
+.preco {
+    color: #C89548;
+    font-size: 25px;
+    font-weight: 800;
+    display: block;
+    margin-top: auto;
+    margin-bottom: 18px;
+}
+
+/* BOTÃO ADICIONAR AO CARRINHO */
+
+.botao-pedido {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+    background: #49291F;
+    color: #FFFFFF;
+    padding: 13px 10px;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.botao-pedido:hover {
+    background: #C89548;
+    color: #FFFFFF;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   CARRINHO DE COMPRAS
+======================================== */
+
+.carrinho-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 80px auto 40px;
+    padding: 30px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(73, 41, 31, 0.09);
+}
+
+/* TÍTULO */
+
+.carrinho-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.carrinho-titulo h2 {
     color: var(--marrom);
-    font-size: 22px;
-    margin-bottom: 12px;
+    font-size: 25px;
 }
 
-.card p {
-    color: #75645b;
+/* CONTADOR */
+
+#carrinho-contador {
+    background: #f5e6d8;
+    color: #8b4513;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* CARRINHO VAZIO */
+
+.carrinho-vazio {
+    text-align: center;
+    padding: 45px 15px;
+}
+
+.carrinho-vazio span {
+    font-size: 50px;
+}
+
+.carrinho-vazio h3 {
+    color: #444;
+    margin: 15px 0 8px;
+}
+
+.carrinho-vazio p {
+    color: #888;
+}
+
+/* ========================================
+   PRODUTOS DENTRO DO CARRINHO
+======================================== */
+
+.carrinho-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* INFORMAÇÕES DO PRODUTO */
+
+.carrinho-produto {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+    min-width: 0;
+}
+
+.carrinho-produto img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carrinho-produto h3 {
+    color: #49291F;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.carrinho-produto p {
+    color: #806D60;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.carrinho-produto strong {
+    color: #C89548;
     font-size: 15px;
+}
+
+
+/* ========================================
+   CONTROLE DE QUANTIDADE
+======================================== */
+
+.controle-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.controle-quantidade button {
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 7px;
+    background: #f1e1d2;
+    color: #8b4513;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.controle-quantidade button:hover {
+    background: #e3c5aa;
+}
+
+.controle-quantidade span {
+    font-weight: bold;
+    min-width: 18px;
+    text-align: center;
+    color: #49291F;
+}
+
+
+/* ========================================
+   REMOVER PRODUTO
+======================================== */
+
+.remover-item {
+    border: none;
+    background: transparent;
+    color: #d9534f;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: inherit;
+    transition: 0.3s;
+}
+
+.remover-item:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   RESUMO DO PEDIDO
+======================================== */
+
+.carrinho-resumo {
+    display: none;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.resumo-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #49372f;
+}
+
+.resumo-linha strong {
+    font-weight: 700;
+}
+
+.resumo-linha.total {
+    color: #49291F;
+    font-size: 23px;
+    font-weight: bold;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* AVISO DE PAGAMENTO */
+
+.aviso-pagamento {
+    text-align: center;
+    color: #806D60;
+    font-size: 13px;
+    margin: 20px 0;
+    padding: 12px;
+    background: #faf5ef;
+    border-radius: 8px;
+}
+
+
+/* ========================================
+   FINALIZAR PELO WHATSAPP
+======================================== */
+
+.botao-finalizar {
+    width: 100%;
+    padding: 16px;
+    background: #25D366;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-finalizar:hover {
+    background: #1da851;
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   LIMPAR CARRINHO
+======================================== */
+
+.botao-limpar {
+    display: block;
+    margin: 15px auto 0;
+    padding: 10px 20px;
+    border: 1px solid #d9534f;
+    color: #d9534f;
+    background: #FFFFFF;
+    border-radius: 8px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-limpar:hover {
+    background: #d9534f;
+    color: #FFFFFF;
 }
 
 
@@ -380,6 +742,24 @@ footer a {
 
 
 /* =================================
+   TABLETS
+================================= */
+
+@media (max-width: 1000px) {
+
+    .cardapio-produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .produto-card img {
+        height: 220px;
+    }
+
+}
+
+
+/* =================================
    RESPONSIVIDADE
 ================================= */
 
@@ -400,6 +780,11 @@ footer a {
     }
 
 }
+
+
+/* =================================
+   CELULARES
+================================= */
 
 @media (max-width: 600px) {
 
@@ -461,185 +846,7 @@ footer a {
         text-align: center;
     }
 
-}
-/* LOGO DO CABEÇALHO */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 50%;
-}
-
-.logo h2 {
-    margin: 0;
-}
-
-
-/* ========================================
-   CARDÁPIO - DOCE IMPÉRIO
-======================================== */
-
-.projetos-secao {
-    background: #F1E5D4;
-    padding: 90px 5%;
-}
-
-/* SUBTÍTULO */
-
-.subtitulo-cardapio {
-    display: block;
-    color: #806D60;
-    font-size: 15px;
-    margin-top: 15px;
-}
-
-/* CATEGORIAS */
-
-.categoria-cardapio {
-    width: 100%;
-    max-width: 1250px;
-    margin: 55px auto 22px;
-    border-left: 5px solid #C89548;
-    padding-left: 18px;
-}
-
-.categoria-cardapio h3 {
-    color: #49291F;
-    font-size: 25px;
-    margin-bottom: 7px;
-}
-
-.categoria-cardapio p {
-    color: #806D60;
-    font-size: 15px;
-    margin: 0;
-}
-
-/* GRADE DE PRODUTOS */
-
-.cardapio-produtos {
-    width: 100%;
-    max-width: 1250px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 25px;
-}
-
-/* CARTÃO */
-
-.produto-card {
-    background: #FFFFFF;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 5px 18px rgba(73, 41, 31, 0.08);
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-}
-
-.produto-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 25px rgba(73, 41, 31, 0.15);
-}
-
-/* FOTOGRAFIA */
-
-.produto-card img {
-    width: 100%;
-    height: 205px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-}
-
-.produto-card:hover img {
-    transform: scale(1.04);
-}
-
-/* INFORMAÇÕES */
-
-.produto-info {
-    padding: 22px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-.produto-info h3 {
-    color: #49291F;
-    font-size: 19px;
-    margin: 0 0 10px;
-}
-
-.produto-info p {
-    color: #806D60;
-    font-size: 14px;
-    line-height: 1.7;
-    margin: 0 0 15px;
-    min-height: 48px;
-}
-
-/* PREÇO */
-
-.preco {
-    color: #C89548;
-    font-size: 25px;
-    font-weight: 800;
-    display: block;
-    margin-top: auto;
-    margin-bottom: 18px;
-}
-
-/* BOTÃO WHATSAPP */
-
-.botao-pedido {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-    text-decoration: none;
-    background: #49291F;
-    color: #FFFFFF;
-    padding: 13px 10px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 700;
-    transition: all 0.3s ease;
-}
-
-.botao-pedido:hover {
-    background: #C89548;
-    color: #FFFFFF;
-    transform: translateY(-2px);
-}
-
-/* TABLETS */
-
-@media (max-width: 1000px) {
-
-    .cardapio-produtos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px;
-    }
-
-    .produto-card img {
-        height: 220px;
-    }
-
-}
-
-/* CELULARES */
-
-@media (max-width: 600px) {
+    /* CARDÁPIO */
 
     .projetos-secao {
         padding: 65px 4%;
@@ -693,9 +900,53 @@ footer a {
         font-size: 13px;
     }
 
+    /* CARRINHO */
+
+    .carrinho-container {
+        padding: 18px;
+        margin: 45px auto;
+    }
+
+    .carrinho-titulo h2 {
+        font-size: 20px;
+    }
+
+    .carrinho-item {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .carrinho-produto {
+        min-width: 100%;
+    }
+
+    .carrinho-produto img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .controle-quantidade {
+        margin-left: 80px;
+    }
+
+    .remover-item {
+        margin-left: auto;
+    }
+
+    .resumo-linha.total {
+        font-size: 20px;
+    }
+
+    .botao-finalizar {
+        font-size: 14px;
+    }
+
 }
 
-/* CELULARES MUITO PEQUENOS */
+
+/* =================================
+   CELULARES MUITO PEQUENOS
+================================= */
 
 @media (max-width: 350px) {
 
