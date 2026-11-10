@@ -959,3 +959,106 @@ footer a {
     }
 
 }
+
+/* =================================
+   NOTIFICAÇÕES DO CARRINHO
+================================= */
+
+.notificacoes-carrinho {
+    position: fixed;
+    top: 100px;
+    right: 25px;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    width: 340px;
+    max-width: calc(100% - 30px);
+
+    pointer-events: none;
+}
+
+.notificacao-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    background: #FFFFFF;
+    color: #49372f;
+
+    padding: 16px 22px;
+    border-radius: 12px;
+
+    border-left: 5px solid #c99b55;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+
+    animation: entrarNotificacao 0.4s ease forwards;
+
+    transition: opacity 0.35s ease,
+                transform 0.35s ease;
+}
+
+.notificacao-carrinho.saindo {
+    opacity: 0;
+    transform: translateX(40px);
+}
+
+.icone-notificacao {
+    min-width: 35px;
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #c99b55;
+    color: #FFFFFF;
+
+    border-radius: 50%;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.notificacao-carrinho strong {
+    color: #4b291f;
+    font-size: 15px;
+}
+
+.notificacao-carrinho p {
+    color: #806D60;
+    font-size: 13px;
+    margin: 2px 0 0;
+}
+
+@keyframes entrarNotificacao {
+
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .notificacoes-carrinho {
+        top: 90px;
+        right: 12px;
+        width: auto;
+        left: 12px;
+        max-width: none;
+    }
+
+}

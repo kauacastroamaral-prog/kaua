@@ -153,15 +153,65 @@ const produtos = [
 let carrinho = [];
 
 
+
+// ========================================
+// FILA DE NOTIFICAÇÕES DO CARRINHO
+// ========================================
+
+function mostrarNotificacao(nomeProduto) {
+
+    const container = document.getElementById(
+        "notificacoes-carrinho"
+    );
+
+    if (!container) return;
+
+    // Criar nova notificação
+    const notificacao = document.createElement("div");
+
+    notificacao.className = "notificacao-carrinho";
+
+    notificacao.innerHTML = `
+        <span class="icone-notificacao">✓</span>
+
+        <div>
+            <strong>Produto adicionado!</strong>
+            <p>${nomeProduto} foi adicionado ao carrinho.</p>
+        </div>
+    `;
+
+    // Adicionar abaixo das notificações existentes
+    container.appendChild(notificacao);
+
+    // Tempo de exibição
+    setTimeout(() => {
+
+        notificacao.classList.add("saindo");
+
+        // Remover depois da animação
+        setTimeout(() => {
+
+            notificacao.remove();
+
+        }, 350);
+
+    }, 3000);
+
+}
+
+
+
 // ========================================
 // FORMATAÇÃO DE PREÇO
 // ========================================
 
 function formatarPreco(valor) {
+
     return valor.toLocaleString("pt-BR", {
         style: "currency",
         currency: "BRL"
     });
+
 }
 
 
@@ -184,6 +234,7 @@ function mostrarProdutos() {
         );
 
         return `
+
             <div class="categoria-cardapio">
 
                 <h3>${categoria}</h3>
@@ -217,6 +268,7 @@ function mostrarProdutos() {
                             <button
                                 class="botao-pedido"
                                 data-adicionar="${produto.id}"
+                                type="button"
                             >
                                 🛒 Adicionar ao carrinho
                             </button>
@@ -266,6 +318,9 @@ function adicionarCarrinho(id) {
     }
 
     atualizarCarrinho();
+
+    // MOSTRAR NOTIFICAÇÃO
+    mostrarNotificacao(produto.nome);
 
 }
 
@@ -326,7 +381,8 @@ function calcularSubtotal() {
 
     return carrinho.reduce((total, item) => {
 
-        return total + Math.round(item.preco * 100) * item.quantidade;
+        return total +
+            Math.round(item.preco * 100) * item.quantidade;
 
     }, 0);
 
@@ -357,17 +413,20 @@ function atualizarCarrinho() {
     contador.textContent =
         `${quantidadeTotal} ${quantidadeTotal === 1 ? "item" : "itens"}`;
 
-    // Carrinho vazio
+    // CARRINHO VAZIO
 
     if (carrinho.length === 0) {
 
         vazio.style.display = "block";
+
         resumo.style.display = "none";
+
         itens.innerHTML = "";
 
     } else {
 
         vazio.style.display = "none";
+
         resumo.style.display = "block";
 
         itens.innerHTML = carrinho.map(item => {
@@ -387,6 +446,7 @@ function atualizarCarrinho() {
                         >
 
                         <div>
+
                             <h3>${item.nome}</h3>
 
                             <p>${formatarPreco(item.preco)} cada</p>
@@ -394,6 +454,7 @@ function atualizarCarrinho() {
                             <strong>
                                 ${formatarPreco(totalItem / 100)}
                             </strong>
+
                         </div>
 
                     </div>
@@ -404,6 +465,7 @@ function atualizarCarrinho() {
                             data-acao="menos"
                             data-id="${item.id}"
                             aria-label="Diminuir quantidade"
+                            type="button"
                         >−</button>
 
                         <span>${item.quantidade}</span>
@@ -412,6 +474,7 @@ function atualizarCarrinho() {
                             data-acao="mais"
                             data-id="${item.id}"
                             aria-label="Aumentar quantidade"
+                            type="button"
                         >+</button>
 
                     </div>
@@ -419,6 +482,7 @@ function atualizarCarrinho() {
                     <button
                         class="remover-item"
                         data-remover="${item.id}"
+                        type="button"
                     >
                         Remover
                     </button>
@@ -508,7 +572,7 @@ function finalizarPedido() {
 // EVENTOS
 // ========================================
 
-// Adicionar produtos
+// ADICIONAR PRODUTOS
 
 document.getElementById("lista-produtos").addEventListener("click", function(event) {
 
@@ -521,7 +585,7 @@ document.getElementById("lista-produtos").addEventListener("click", function(eve
 });
 
 
-// Controles do carrinho
+// CONTROLES DO CARRINHO
 
 document.getElementById("carrinho-itens").addEventListener("click", function(event) {
 
@@ -547,14 +611,20 @@ document.getElementById("carrinho-itens").addEventListener("click", function(eve
 });
 
 
-// Finalizar pedido
+// FINALIZAR PEDIDO
 
-document.getElementById("finalizar-pedido").addEventListener("click", finalizarPedido);
+document.getElementById("finalizar-pedido").addEventListener(
+    "click",
+    finalizarPedido
+);
 
 
-// Limpar carrinho
+// LIMPAR CARRINHO
 
-document.getElementById("limpar-carrinho").addEventListener("click", limparCarrinho);
+document.getElementById("limpar-carrinho").addEventListener(
+    "click",
+    limparCarrinho
+);
 
 
 // ========================================
