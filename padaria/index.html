@@ -7,22 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Doce Império | Padaria</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- ÍCONE DO SITE -->
-<link rel="icon" type="image/png" href="./android-chrome-192x192.png">
 
-<link rel="apple-touch-icon" href="./android-chrome-192x192.png">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/png" href="./android-chrome-192x192.png">
+    <link rel="apple-touch-icon" href="./android-chrome-192x192.png">
 </head>
 
 <body>
 
-
- <!-- NOTIFICAÇÕES DO CARRINHO -->
-<div id="notificacoes-carrinho"
-class="notificacoes-carrinho">
+<!-- NOTIFICAÇÕES DO CARRINHO -->
+<div id="notificacoes-carrinho" class="notificacoes-carrinho">
 </div>
-    <!-- MENU -->
-    <header>
+
+<!-- MENU -->
+<header>
 
     <div class="logo">
 
@@ -34,293 +33,370 @@ class="notificacoes-carrinho">
     </div>
 
     <nav>
-            <a href="#inicio">Início</a>
-            <a href="#sobre">Sobre nós</a>
-            <a href="#cardapio">Cardápio</a>
-            <a href="#contato">Contato</a>
-        </nav>
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre nós</a>
+        <a href="#cardapio">Cardápio</a>
+        <a href="#localizacao">Venha nos conhecer</a>
+        <a href="#contato">Contato</a>
+    </nav>
 
-    </header>
+</header>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <main>
+<!-- CONTEÚDO PRINCIPAL -->
+<main>
 
-        <!-- INÍCIO -->
-        <section id="inicio" class="inicio">
+    <!-- INÍCIO -->
+    <section id="inicio" class="inicio">
 
-            <div class="inicio-conteudo">
+        <div class="inicio-conteudo">
 
-                <p class="apresentacao">
-                    Seja bem-vindo à Doce Império!
-                </p>
-
-                <h1>DOCE IMPÉRIO</h1>
-
-                <h2>
-                    O sabor que transforma seus momentos
-                    em algo especial.
-                </h2>
-
-                <p class="descricao">
-                    Especialistas em pães, bolos, doces e
-                    delícias preparadas com carinho para
-                    tornar seu dia ainda mais saboroso.
-                </p>
-
-            </div>
-
-            <div class="botoes">
-
-                <a href="#cardapio" class="botao">
-                    Conheça nosso cardápio
-                </a>
-
-                <a href="#contato" class="botao botao-secundario">
-                    Fale conosco
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- SOBRE A PADARIA -->
-        <section id="sobre" class="sobre">
-
-            <div class="titulo-secao">
-
-                <p>Conheça nossa história</p>
-
-                <h2>Sobre a Doce Império</h2>
-
-            </div>
-
-            <div class="sobre-conteudo">
-
-                <div class="sobre-texto">
-
-                    <p>
-                        Nossa padaria nasceu com o propósito
-                        de oferecer produtos de qualidade,
-                        sabores especiais e momentos
-                        deliciosos para nossos clientes.
-                    </p>
-
-                    <p>
-                        Acreditamos que uma boa experiência
-                        começa com ingredientes selecionados,
-                        dedicação e carinho em cada produto.
-                    </p>
-
-                    <p>
-                        Trabalhamos diariamente oferecendo
-                        uma variedade de pães fresquinhos,
-                        bolos, doces, salgados e outras
-                        delícias para todos os momentos.
-                    </p>
-
-                    <p>
-                        Nosso compromisso é proporcionar
-                        qualidade, sabor e satisfação,
-                        sempre buscando atender nossos
-                        clientes da melhor maneira possível.
-                    </p>
-
-                    <h3>Nossa missão</h3>
-
-                    <p>
-                        Oferecer produtos saborosos e de
-                        qualidade, proporcionando experiências
-                        especiais e satisfação para cada cliente.
-                    </p>
-
-                    <h3>Nossa visão</h3>
-
-                    <p>
-                        Ser reconhecida pela qualidade dos
-                        nossos produtos, excelência no
-                        atendimento e confiança dos clientes.
-                    </p>
-
-                    <h3>Nossos valores</h3>
-
-                    <p>
-                        Qualidade, dedicação, respeito,
-                        compromisso, carinho e excelência
-                        no atendimento.
-                    </p>
-
-                </div>
-
-                <!-- DIFERENCIAIS -->
-                <div class="habilidades">
-
-                    <div class="habilidade">
-
-                        <h3>🥖 Qualidade e Sabor</h3>
-
-                        <p>
-                            Produtos selecionados para
-                            proporcionar uma experiência
-                            deliciosa em cada visita.
-                        </p>
-
-                    </div>
-
-                    <div class="habilidade">
-
-                        <h3>❤️ Atendimento Especial</h3>
-
-                        <p>
-                            Valorizamos cada cliente,
-                            oferecendo um atendimento
-                            acolhedor e atencioso.
-                        </p>
-
-                    </div>
-
-                    <div class="habilidade">
-
-                        <h3>✨ Variedade</h3>
-
-                        <p>
-                            Diversas opções de pães,
-                            doces, bolos e salgados
-                            para todos os gostos.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        
-
-<!-- CARDÁPIO -->
-<section id="cardapio" class="projetos-secao">
-
-    <div class="titulo-secao">
-        <p>Descubra nossos sabores</p>
-        <h2>Nosso Cardápio</h2>
-        <span class="subtitulo-cardapio">
-            Escolha seus produtos favoritos e monte seu pedido.
-        </span>
-    </div>
-
-    <!-- PRODUTOS GERADOS PELO JAVASCRIPT -->
-    <div id="lista-produtos"></div>
-
-    <!-- CARRINHO -->
-    <section id="carrinho" class="carrinho-container">
-
-        <div class="carrinho-titulo">
-            <h2>🛒 Meu Carrinho</h2>
-            <span id="carrinho-contador">0 itens</span>
-        </div>
-
-        <div id="carrinho-vazio" class="carrinho-vazio">
-            <span>🛍️</span>
-            <h3>Seu carrinho está vazio!</h3>
-            <p>Adicione algumas delícias do nosso cardápio.</p>
-        </div>
-
-        <div id="carrinho-itens"></div>
-
-        <div id="carrinho-resumo" class="carrinho-resumo">
-
-            <div class="resumo-linha">
-                <span>Subtotal:</span>
-                <strong id="subtotal">R$ 0,00</strong>
-            </div>
-
-            <div class="resumo-linha total">
-                <span>Total do pedido:</span>
-                <strong id="total">R$ 0,00</strong>
-            </div>
-
-            <p class="aviso-pagamento">
-                O pagamento será combinado diretamente pelo WhatsApp.
+            <p class="apresentacao">
+                Seja bem-vindo à Doce Império!
             </p>
 
-            <button id="finalizar-pedido" class="botao-finalizar">
-                Finalizar pedido pelo WhatsApp
-            </button>
+            <h1>DOCE IMPÉRIO</h1>
 
-            <button id="limpar-carrinho" class="botao-limpar">
-                Limpar carrinho
-            </button>
+            <h2>
+                O sabor que transforma seus momentos
+                em algo especial.
+            </h2>
+
+            <p class="descricao">
+                Especialistas em pães, bolos, doces e
+                delícias preparadas com carinho para
+                tornar seu dia ainda mais saboroso.
+            </p>
+
+        </div>
+
+        <div class="botoes">
+
+            <a href="#cardapio" class="botao">
+                Conheça nosso cardápio
+            </a>
+
+            <a href="#contato" class="botao botao-secundario">
+                Fale conosco
+            </a>
 
         </div>
 
     </section>
 
-</section>
+
+    <!-- SOBRE A PADARIA -->
+    <section id="sobre" class="sobre">
+
+        <div class="titulo-secao">
+
+            <p>Conheça nossa história</p>
+
+            <h2>Sobre a Doce Império</h2>
+
+        </div>
+
+        <div class="sobre-conteudo">
+
+            <div class="sobre-texto">
+
+                <p>
+                    Nossa padaria nasceu com o propósito
+                    de oferecer produtos de qualidade,
+                    sabores especiais e momentos
+                    deliciosos para nossos clientes.
+                </p>
+
+                <p>
+                    Acreditamos que uma boa experiência
+                    começa com ingredientes selecionados,
+                    dedicação e carinho em cada produto.
+                </p>
+
+                <p>
+                    Trabalhamos diariamente oferecendo
+                    uma variedade de pães fresquinhos,
+                    bolos, doces, salgados e outras
+                    delícias para todos os momentos.
+                </p>
+
+                <p>
+                    Nosso compromisso é proporcionar
+                    qualidade, sabor e satisfação,
+                    sempre buscando atender nossos
+                    clientes da melhor maneira possível.
+                </p>
+
+                <h3>Nossa missão</h3>
+
+                <p>
+                    Oferecer produtos saborosos e de
+                    qualidade, proporcionando experiências
+                    especiais e satisfação para cada cliente.
+                </p>
+
+                <h3>Nossa visão</h3>
+
+                <p>
+                    Ser reconhecida pela qualidade dos
+                    nossos produtos, excelência no
+                    atendimento e confiança dos clientes.
+                </p>
+
+                <h3>Nossos valores</h3>
+
+                <p>
+                    Qualidade, dedicação, respeito,
+                    compromisso, carinho e excelência
+                    no atendimento.
+                </p>
+
+            </div>
+
+            <!-- DIFERENCIAIS -->
+            <div class="habilidades">
+
+                <div class="habilidade">
+
+                    <h3>🥖 Qualidade e Sabor</h3>
+
+                    <p>
+                        Produtos selecionados para
+                        proporcionar uma experiência
+                        deliciosa em cada visita.
+                    </p>
+
+                </div>
+
+                <div class="habilidade">
+
+                    <h3>❤️ Atendimento Especial</h3>
+
+                    <p>
+                        Valorizamos cada cliente,
+                        oferecendo um atendimento
+                        acolhedor e atencioso.
+                    </p>
+
+                </div>
+
+                <div class="habilidade">
+
+                    <h3>✨ Variedade</h3>
+
+                    <p>
+                        Diversas opções de pães,
+                        doces, bolos e salgados
+                        para todos os gostos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
+    <!-- CARDÁPIO -->
+    <section id="cardapio" class="projetos-secao">
+
+        <div class="titulo-secao">
+
+            <p>Descubra nossos sabores</p>
+
+            <h2>Nosso Cardápio</h2>
+
+            <span class="subtitulo-cardapio">
+                Escolha seus produtos favoritos e monte seu pedido.
+            </span>
+
+        </div>
+
+        <!-- PRODUTOS GERADOS PELO JAVASCRIPT -->
+        <div id="lista-produtos"></div>
+
+        <!-- CARRINHO -->
+        <section id="carrinho" class="carrinho-container">
+
+            <div class="carrinho-titulo">
+
+                <h2>🛒 Meu Carrinho</h2>
+
+                <span id="carrinho-contador">0 itens</span>
+
+            </div>
+
+            <div id="carrinho-vazio" class="carrinho-vazio">
+
+                <span>🛍️</span>
+
+                <h3>Seu carrinho está vazio!</h3>
+
+                <p>Adicione algumas delícias do nosso cardápio.</p>
+
+            </div>
+
+            <div id="carrinho-itens"></div>
+
+            <div id="carrinho-resumo" class="carrinho-resumo">
+
+                <div class="resumo-linha">
+
+                    <span>Subtotal:</span>
+
+                    <strong id="subtotal">R$ 0,00</strong>
+
+                </div>
+
+                <div class="resumo-linha total">
+
+                    <span>Total do pedido:</span>
+
+                    <strong id="total">R$ 0,00</strong>
+
+                </div>
+
+                <p class="aviso-pagamento">
+                    O pagamento será combinado diretamente pelo WhatsApp.
+                </p>
+
+                <button id="finalizar-pedido" class="botao-finalizar">
+                    Finalizar pedido pelo WhatsApp
+                </button>
+
+                <button id="limpar-carrinho" class="botao-limpar">
+                    Limpar carrinho
+                </button>
+
+            </div>
+
+        </section>
+
+    </section>
 
 
-        
-<!-- CONTATO -->
-<section id="contato" class="contato">
+    <!-- VENHA NOS CONHECER -->
+    <section id="localizacao" class="localizacao">
 
-    <div class="titulo-secao">
+        <div class="titulo-secao">
 
-        <p>Estamos esperando por você!</p>
+            <p>Será um prazer receber você!</p>
 
-        <h2>Entre em contato</h2>
+            <h2>Venha nos conhecer</h2>
 
-    </div>
+        </div>
 
-    <div class="contato-links">
+        <div class="localizacao-conteudo">
 
-        <!-- WHATSAPP -->
-        <a
-            href="https://wa.me/5541998892366"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            💬 WhatsApp
-        </a>
+            <!-- GALERIA DE FOTOS -->
+            <div class="galeria-loja">
 
-        <!-- E-MAIL -->
-        <a href="mailto:doceimperio@gmail.com">
-            ✉️ E-mail
-        </a>
+                <img src="./fachada-loja.jpg"
+                     alt="Fachada da Padaria Doce Império">
 
-        <!-- INSTAGRAM -->
-        <a
-            href="https://www.instagram.com/doce_imperio_gourmet_/"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            📸 Instagram
-        </a>
+                <img src="./interior-loja.jpg"
+                     alt="Interior da Padaria Doce Império">
 
-    </div>
+            </div>
 
-</section>
+            <!-- INFORMAÇÕES DA LOJA -->
+            <div class="localizacao-texto">
+
+                <h3>📍 Estamos esperando por você!</h3>
+
+                <p>
+                    Venha conhecer a Doce Império e
+                    aproveitar nossas delícias preparadas
+                    com carinho para você!
+                </p>
+
+                <h3>Nosso endereço</h3>
+
+                <p>
+                    Rua Bandeirantes, 638<br>
+                    Estados, Fazenda Rio Grande - PR<br>
+                    CEP: 83830-273
+                </p>
+
+                <p>
+                    📞 (41) 98811-5155
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Rua+Bandeirantes+638+Estados+Fazenda+Rio+Grande+PR+83830-273"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="botao"
+                >
+                    📍 Como chegar
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
+    <!-- CONTATO -->
+    <section id="contato" class="contato">
 
-    <!-- RODAPÉ -->
-    <footer>
+        <div class="titulo-secao">
 
-        <p>
-            Desenvolvido por
-            <a href="https://look.devlook.xyz">DevFlow</a>
-        </p>
+            <p>Estamos esperando por você!</p>
 
-        <p>
-            Doce Império | Todos os direitos reservados.
-        </p>
+            <h2>Entre em contato</h2>
 
-    </footer>
+        </div>
 
-    <script src="script.js"></script>
+        <div class="contato-links">
+
+            <!-- WHATSAPP -->
+            <a
+                href="https://wa.me/5541988115155"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                💬 WhatsApp
+            </a>
+
+            <!-- E-MAIL -->
+            <a href="mailto:doceimperio@gmail.com">
+                ✉️ E-mail
+            </a>
+
+            <!-- INSTAGRAM -->
+            <a
+                href="https://www.instagram.com/doce_imperio_gourmet_/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📸 Instagram
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- RODAPÉ -->
+<footer>
+
+    <p>
+        Desenvolvido por
+        <a href="https://look.devlook.xyz">DevFlow</a>
+    </p>
+
+    <p>
+        Doce Império | Todos os direitos reservados.
+    </p>
+
+</footer>
+
+<script src="script.js"></script>
+
 </body>
-
 </html>
