@@ -1,1 +1,2 @@
-alert("javaScript conectado ao Doce Imperio!");
+let nomedapadaria = "Doce Imperio";
+console.log("Doce Imperio");
