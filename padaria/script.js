@@ -5,8 +5,7 @@ console.log("Doce Imperio");
 // CONFIGURAÇÕES
 // ========================================
 
-const WHATSAPP = "5541998892366";
-
+const WHATSAPP = "5541988115155"
 const produtos = [
 
     // PÃES
